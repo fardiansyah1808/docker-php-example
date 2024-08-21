@@ -32,6 +32,21 @@ WORKDIR /var/www/tanrise_admin
 
 COPY . .
 
+# Tambahkan ARG dan ENV untuk mengimpor variabel dari file .env
+ENV DB_HOST=uat.ifca.co.id
+ENV DB_PORT=1119
+ENV DB_DATABASE=tanrise_adm
+ENV DB_USERNAME=mgr
+ENV DB_PASSWORD=mgr
+
+ENV DB_HOST2=sql.property365.co.id
+ENV DB_PORT2=2243
+ENV DB_DATABASE2=tanrise_dev
+ENV DB_USERNAME2=mgr
+ENV DB_PASSWORD2=1fc41fc4
+
+EXPOSE 9000
+
 # RUN composer install --no-interaction --no-dev --prefer-dist
 
 # CMD ["php-fpm", "-D"]
